@@ -88,6 +88,8 @@ section { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
 .contact-list { display: flex; flex-direction: column; gap: 10px; }
 .contact-item { background: white; border-radius: 8px; border: 1px solid #e2e8f0; padding: 14px 18px; display: flex; align-items: center; gap: 12px; font-size: 13px; color: #0f172a; }
 .contact-item .contact-label { color: #94a3b8; font-size: 11px; margin-bottom: 2px; }
+.contact-item a { color: #0f172a; text-decoration: none; }
+.contact-item a:hover { text-decoration: underline; }
 
 /* FOOTER */
 footer { text-align: center; padding: 28px 24px; border-top: 1px solid #e2e8f0; font-size: 12px; color: #94a3b8; background: white; }
@@ -237,13 +239,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="contact-item">
       <div>
         <div class="contact-label">Email</div>
-        <div>radio.developer.tech@gmail.com</div>
+        <div><a href="mailto:radio.developer.tech@gmail.com">radio.developer.tech@gmail.com</a></div>
       </div>
     </div>
     <div class="contact-item">
       <div>
         <div class="contact-label">X (Twitter)</div>
-        <div>@shirufeido-neo</div>
+        <div><a href="https://x.com/shirufeido-neo" target="_blank" rel="noopener noreferrer">@shirufeido-neo</a></div>
       </div>
     </div>
   </div>
