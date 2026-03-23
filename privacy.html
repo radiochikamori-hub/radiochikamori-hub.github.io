@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー — Quiet Studio</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'Helvetica Neue', sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.8; }
+
+body.lang-ja .en { display: none !important; }
+body.lang-en .ja { display: none !important; }
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e2e8f0;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 32px; height: 52px;
+}
+.nav-logo { font-size: 13px; font-weight: 700; color: #0f172a; text-decoration: none; }
+
+.content { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
+h1 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+.updated { font-size: 12px; color: #94a3b8; margin-bottom: 40px; }
+h2 { font-size: 15px; font-weight: 700; margin-top: 32px; margin-bottom: 10px; color: #0f172a; }
+p { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 12px; }
+th { background: #f1f5f9; padding: 8px 12px; text-align: left; font-weight: 600; color: #475569; border: 1px solid #e2e8f0; }
+td { padding: 8px 12px; color: #64748b; border: 1px solid #e2e8f0; vertical-align: top; }
+
+footer { text-align: center; padding: 28px 24px; border-top: 1px solid #e2e8f0; font-size: 12px; color: #94a3b8; background: white; margin-top: 40px; }
+footer a { color: #64748b; text-decoration: none; }
+footer a:hover { color: #0f172a; }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var lang = navigator.language.startsWith('ja') ? 'ja' : 'en';
+  document.body.classList.add('lang-' + lang);
+});
+</script>
+</head>
+<body class="lang-ja">
+
+<nav>
+  <a href="index.html" class="nav-logo">← Quiet Studio</a>
+</nav>
+
+<div class="content">
+  <h1>
+    <span class="ja">プライバシーポリシー</span>
+    <span class="en">Privacy Policy</span>
+  </h1>
+  <p class="updated">
+    <span class="ja">最終更新日: 2026年3月23日</span>
+    <span class="en">Last updated: March 23, 2026</span>
+  </p>
+
+  <p>
+    <span class="ja">Quiet Studio（以下「当スタジオ」）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めます。本ポリシーは、当スタジオが提供するモバイルアプリケーションに適用されます。</span>
+    <span class="en">Quiet Studio ("we", "our") respects your privacy and is committed to protecting your personal information. This policy applies to all mobile applications provided by Quiet Studio.</span>
+  </p>
+
+  <h2>
+    <span class="ja">収集する情報</span>
+    <span class="en">Information We Collect</span>
+  </h2>
+  <p>
+    <span class="ja">当スタジオのアプリは、個人を特定できる情報を収集しません。第三者への情報提供・広告トラッキングは一切行いません。</span>
+    <span class="en">Our apps do not collect personally identifiable information. We do not share data with third parties or engage in ad tracking.</span>
+  </p>
+
+  <h2>
+    <span class="ja">アプリ別のデータ・権限一覧</span>
+    <span class="en">Data &amp; Permissions by App</span>
+  </h2>
+
+  <table>
+    <tr>
+      <th><span class="ja">アプリ</span><span class="en">App</span></th>
+      <th><span class="ja">使用する権限</span><span class="en">Permissions Used</span></th>
+      <th><span class="ja">収集データ</span><span class="en">Data Collected</span></th>
+    </tr>
+    <tr>
+      <td><span class="ja">水準器</span><span class="en">Spirit Level</span></td>
+      <td><span class="ja">センサー（加速度計）</span><span class="en">Sensors (accelerometer)</span></td>
+      <td><span class="ja">なし</span><span class="en">None</span></td>
+    </tr>
+    <tr>
+      <td><span class="ja">騒音計</span><span class="en">Noise Meter</span></td>
+      <td><span class="ja">マイク（音量計測のみ・録音なし）</span><span class="en">Microphone (measurement only, no recording)</span></td>
+      <td><span class="ja">なし</span><span class="en">None</span></td>
+    </tr>
+    <tr>
+      <td><span class="ja">メトロノーム</span><span class="en">Metronome</span></td>
+      <td><span class="ja">なし</span><span class="en">None</span></td>
+      <td><span class="ja">なし</span><span class="en">None</span></td>
+    </tr>
+    <tr>
+      <td>Kura</td>
+      <td><span class="ja">ストレージ（ダウンロード保存のみ）</span><span class="en">Storage (save downloads only)</span></td>
+      <td><span class="ja">なし</span><span class="en">None</span></td>
+    </tr>
+    <tr>
+      <td>NISA iDeCo Simulator</td>
+      <td><span class="ja">なし</span><span class="en">None</span></td>
+      <td><span class="ja">なし（入力データはデバイス内のみ）</span><span class="en">None (input data stays on device)</span></td>
+    </tr>
+    <tr>
+      <td>AppIcon.ai</td>
+      <td><span class="ja">カメラ・ストレージ（任意・アイコン保存のみ）</span><span class="en">Camera &amp; Storage (optional, save icons only)</span></td>
+      <td><span class="ja">なし</span><span class="en">None</span></td>
+    </tr>
+  </table>
+
+  <h2>
+    <span class="ja">お問い合わせ</span>
+    <span class="en">Contact</span>
+  </h2>
+  <p>
+    <span class="ja">プライバシーに関するご質問は下記メールアドレスまでご連絡ください。</span>
+    <span class="en">For privacy-related inquiries, please contact us at the email address below.</span>
+  </p>
+  <p><a href="mailto:radio.developer.tech@gmail.com">radio.developer.tech@gmail.com</a></p>
+</div>
+
+<footer>
+  <p><a href="index.html">← Quiet Studio</a> &nbsp;·&nbsp; © 2026 Quiet Studio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
