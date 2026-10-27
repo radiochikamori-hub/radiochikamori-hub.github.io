@@ -109,9 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
       <td><span class="ja">当スタジオは収集しません。入力データはデバイス内のみです。広告（Google AdMob）が広告 ID などを Google に送信します（下記「<a href="#admob-common">広告について</a>」）</span><span class="en">We do not collect it. Input data stays on device. Ads (Google AdMob) send information such as the advertising ID to Google (see "<a href="#admob-common">About Advertising</a>" below).</span></td>
     </tr>
     <tr>
-      <td>AppIcon.ai</td>
-      <td><span class="ja">カメラ・ストレージ（任意・アイコン保存のみ）、インターネット、広告 ID</span><span class="en">Camera &amp; Storage (optional, save icons only), internet, advertising ID</span></td>
-      <td><span class="ja">画像生成のためにプロンプト等を外部に送信します。広告（Google AdMob）が広告 ID などを Google に送信します。詳細はリリース時に本ページに記載します。</span><span class="en">Prompts and related data are sent externally for image generation. Ads (Google AdMob) send information such as the advertising ID to Google. Details will be added to this page at release.</span></td>
+      <td><a href="#appicon">AppIcon.ai</a></td>
+      <td><span class="ja">インターネット、写真・画像（任意・生成した画像のギャラリー保存のみ）、アプリ内課金、広告 ID</span><span class="en">Internet, photos &amp; images (optional, only to save generated images to the gallery), in-app purchases, advertising ID</span></td>
+      <td><span class="ja">AI 生成のためにプロンプトなどを当スタジオの生成サーバーに送信し、24 時間以内に削除します。無料回数の管理のため、匿名の識別子と使用回数を Google Firebase に保存します。広告（Google AdMob）が広告 ID などを Google に送信します（下記「<a href="#appicon">AppIcon.ai</a>」の節）</span><span class="en">For AI generation, prompts and related data are sent to our generation server and deleted within 24 hours. To manage free uses, an anonymous identifier and a usage count are stored in Google Firebase. Ads (Google AdMob) send information such as the advertising ID to Google (see the "<a href="#appicon">AppIcon.ai</a>" section below).</span></td>
     </tr>
   </table>
 
@@ -264,6 +264,97 @@ document.addEventListener('DOMContentLoaded', function() {
   </p>
 
   <p><strong><span class="ja">10. お問い合わせ</span><span class="en">10. Contact</span></strong></p>
+  <p>
+    <span class="ja">本アプリのプライバシーに関するお問い合わせ: <a href="mailto:info@quietstudio.net">info@quietstudio.net</a>（Quiet Studio）</span>
+    <span class="en">For privacy inquiries about the App: <a href="mailto:info@quietstudio.net">info@quietstudio.net</a> (Quiet Studio)</span>
+  </p>
+
+  <!-- AppIcon.ai 専用セクション -->
+  <h2 id="appicon">AppIcon.ai</h2>
+  <p>
+    <span class="ja">AppIcon.ai（以下「本アプリ」）での情報の取り扱いは次のとおりです。本アプリは、氏名・メールアドレス・電話番号・位置情報など、利用者を特定できる情報を収集しません。</span>
+    <span class="en">This section describes how AppIcon.ai (the "App") handles information. The App does not collect information that identifies you, such as your name, email address, phone number or location.</span>
+  </p>
+
+  <p><strong><span class="ja">1. 端末内に保存する情報</span><span class="en">1. Information stored on your device</span></strong></p>
+  <p>
+    <span class="ja">本アプリは、インストールごとに端末内で作る匿名の識別子（ランダムな文字列）と、Pro（定期購入）の状態を端末内に保存します。生成した画像は、利用者が「ギャラリーに保存」または「共有」を選んだときだけ、端末のギャラリーや共有先に保存されます。これらは本アプリを削除（アンインストール）すると端末内から消去されます（ギャラリーに保存した画像は残ります）。</span>
+    <span class="en">The App stores on your device an anonymous identifier (a random string created on the device for each installation) and your Pro (subscription) status. Generated images are saved to your gallery or the destination you choose only when you tap "Save to gallery" or "Share". This information is deleted from your device when you uninstall the App (images saved to your gallery remain).</span>
+  </p>
+
+  <p><strong><span class="ja">2. AI 生成のために生成サーバーに送信する情報</span><span class="en">2. Information sent to our generation server for AI generation</span></strong></p>
+  <p>
+    <span class="ja">「テンプレート + AI」または「AI でゼロから生成」で生成するとき、本アプリは次の情報を当スタジオが運用する画像生成サーバーに送信します。送信するのは生成に必要な情報だけで、端末内の写真やファイルを送ることはありません。</span>
+    <span class="en">When you generate with "Template + AI" or "Generate from scratch with AI", the App sends the following to the image generation server operated by us. Only the information needed for generation is sent; photos or files on your device are never sent.</span>
+  </p>
+  <table>
+    <tr>
+      <th><span class="ja">送信される情報</span><span class="en">Information sent</span></th>
+      <th><span class="ja">利用目的</span><span class="en">Purpose</span></th>
+      <th><span class="ja">保存期間</span><span class="en">Retention</span></th>
+    </tr>
+    <tr>
+      <td><span class="ja">生成用のプロンプト（入力した文〔日本語の場合は下記 3 の英訳〕と、選んだテンプレート・カテゴリから本アプリが作る英文）</span><span class="en">The generation prompt (the text you enter〔its English translation in section 3 if it is in Japanese〕 and English text the App builds from the template and category you choose)</span></td>
+      <td rowspan="3"><span class="ja">画像の生成と、生成した画像を本アプリに返すため。ほかの目的（AI の学習を含む）には使いません。</span><span class="en">To generate the image and return it to the App. It is not used for any other purpose, including AI training.</span></td>
+      <td rowspan="3"><span class="ja">生成のために一時的にサーバーに保存し、24 時間以内に削除します。</span><span class="en">Stored temporarily on the server for generation and deleted within 24 hours.</span></td>
+    </tr>
+    <tr>
+      <td><span class="ja">「テンプレート + AI」で選んだテンプレートの画像（本アプリに含まれる画像。色を指定した場合は端末内で塗り替えた画像）</span><span class="en">With "Template + AI", the image of the template you choose (an image included in the App; if you specify a color, the image recolored on your device)</span></td>
+    </tr>
+    <tr>
+      <td><span class="ja">生成された画像</span><span class="en">The generated image</span></td>
+    </tr>
+  </table>
+
+  <p><strong><span class="ja">3. 入力の英訳（当スタジオの生成サーバー）</span><span class="en">3. Translation of your input (our generation server)</span></strong></p>
+  <p>
+    <span class="ja">入力した文に日本語が含まれる場合、本アプリはその文を当スタジオが運用する生成サーバーに送り、サーバー上の翻訳機能で英語に翻訳します。入力した文を翻訳のために第三者へ送ることはありません。翻訳のために受け取った文は保存せず、処理のあいだだけ扱います（記録するのは文字数と処理時間だけです）。翻訳した英文は、上記 2 の生成用のプロンプトの一部として扱い、24 時間以内に削除します。</span>
+    <span class="en">If the text you enter contains Japanese, the App sends it to the generation server operated by us, where it is translated into English. The text you enter is never sent to third parties for translation. The text received for translation is not stored; it is handled only while being processed (we record only its length and the processing time). The translated English text is handled as part of the generation prompt described in section 2 and deleted within 24 hours.</span>
+  </p>
+
+  <p><strong><span class="ja">4. 無料回数の管理（Google Firebase）</span><span class="en">4. Managing free uses (Google Firebase)</span></strong></p>
+  <p>
+    <span class="ja">AI 生成の無料回数（3 回）を管理するため、上記 1 の匿名の識別子に結び付けて、AI 生成の使用回数・最後に使った日時・Pro の状態を、Google LLC が提供する「Google Firebase（Cloud Firestore）」に保存します。これらの情報から利用者個人を特定することはできません。送信は暗号化された通信で行われます。</span>
+    <span class="en">To manage the free AI generations (3 times), the App stores the number of AI generations, the date and time of the last use, and your Pro status, linked to the anonymous identifier in section 1, in "Google Firebase (Cloud Firestore)" provided by Google LLC. This information cannot be used to identify you. It is sent over encrypted connections.</span>
+  </p>
+
+  <p><strong><span class="ja">5. 広告（Google AdMob）</span><span class="en">5. Advertising (Google AdMob)</span></strong></p>
+  <p>
+    <span class="ja">本アプリは、AI 生成の後に Google LLC が提供する広告配信サービス「Google AdMob」の広告を表示します。広告の表示のために、本アプリに組み込まれた Google の広告 SDK が、上記「<a href="#admob-common">広告について</a>」の表の情報（広告 ID などの端末の識別子、IP アドレス、操作の情報、診断情報、端末の情報）を Google に送信します。当スタジオはこれらの情報を受け取りません。Pro では広告を読み込みませんが、広告 SDK はアプリの起動時に初期化されるため、初期化に伴う情報が送信されることがあります。パーソナライズ広告を止める方法は「<a href="#admob-common">広告について</a>」をご確認ください。</span>
+    <span class="en">After AI generation, the App shows ads served by Google AdMob, an ad service provided by Google LLC. To show ads, the Google ad SDK built into the App sends the information listed in "<a href="#admob-common">About Advertising</a>" above (device identifiers such as the advertising ID, IP address, interactions, diagnostic information and device information) to Google. We do not receive this information. With Pro, the App does not load ads, but the ad SDK is initialized when the App starts, so information related to initialization may be sent. See "<a href="#admob-common">About Advertising</a>" for how to stop personalized ads.</span>
+  </p>
+
+  <p><strong><span class="ja">6. アプリ内課金</span><span class="en">6. In-app purchases</span></strong></p>
+  <p>
+    <span class="ja">Pro（定期購入）の購入は、Google Play の決済システムで行います。支払いに関する情報は Google が取り扱い、当スタジオは受け取りません。本アプリは、Pro かどうかだけを端末内と上記 4 に保存します。</span>
+    <span class="en">Pro (subscription) is purchased through Google Play's billing system. Payment information is handled by Google, and we do not receive it. The App stores only whether you have Pro, on your device and as described in section 4.</span>
+  </p>
+
+  <p><strong><span class="ja">7. 権限</span><span class="en">7. Permissions</span></strong></p>
+  <p>
+    <span class="ja">写真・画像へのアクセスは、生成した画像をギャラリーに保存するときだけ求めます。本アプリはカメラ・マイク・位置情報・連絡先を使いません。</span>
+    <span class="en">Access to photos and images is requested only when you save a generated image to your gallery. The App does not use the camera, microphone, location or contacts.</span>
+  </p>
+
+  <p><strong><span class="ja">8. 対象年齢</span><span class="en">8. Age</span></strong></p>
+  <p>
+    <span class="ja">本アプリは 13 歳未満の子どもを対象としたものではなく、子どもから意図的に情報を集めることはありません。</span>
+    <span class="en">The App is not directed to children under 13, and we do not knowingly collect information from children.</span>
+  </p>
+
+  <p><strong><span class="ja">9. 安全管理</span><span class="en">9. Security</span></strong></p>
+  <p>
+    <span class="ja">生成サーバーへの送信は暗号化された通信（VPN）で、Google Firebase への送信は暗号化された通信（HTTPS）で行われます。生成サーバーに一時的に保存した情報は、上記 2 のとおり 24 時間以内に削除します。</span>
+    <span class="en">Information is sent to the generation server over an encrypted connection (VPN) and to Google Firebase over an encrypted connection (HTTPS). Information temporarily stored on the generation server is deleted within 24 hours as described in section 2.</span>
+  </p>
+
+  <p><strong><span class="ja">10. 保存期間と削除</span><span class="en">10. Retention and deletion</span></strong></p>
+  <p>
+    <span class="ja">生成サーバーの情報は 24 時間以内に削除します（翻訳のために受け取った文は保存しません）。Google Firebase の情報（上記 4）は、最後に使ってから 1 年を過ぎると削除します（削除の処理には数日かかる場合があります）。端末内の情報は、本アプリの削除で消去できます。Google に送信された情報の保存期間は、Google のポリシーに従います。</span>
+    <span class="en">Information on the generation server is deleted within 24 hours (text received for translation is not stored). Information in Google Firebase (section 4) is deleted after one year from your last use (deletion may take a few days). Information on your device can be deleted by uninstalling the App. Information sent to Google is retained in accordance with Google's policies.</span>
+  </p>
+
+  <p><strong><span class="ja">11. お問い合わせ</span><span class="en">11. Contact</span></strong></p>
   <p>
     <span class="ja">本アプリのプライバシーに関するお問い合わせ: <a href="mailto:info@quietstudio.net">info@quietstudio.net</a>（Quiet Studio）</span>
     <span class="en">For privacy inquiries about the App: <a href="mailto:info@quietstudio.net">info@quietstudio.net</a> (Quiet Studio)</span>
