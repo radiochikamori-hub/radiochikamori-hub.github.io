@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <span class="en">Privacy Policy</span>
   </h1>
   <p class="updated">
-    <span class="ja">最終更新日: 2026年10月27日</span>
-    <span class="en">Last updated: October 27, 2026</span>
+    <span class="ja">最終更新日: 2026年10月29日</span>
+    <span class="en">Last updated: October 29, 2026</span>
   </p>
 
   <p>
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <tr>
       <td><a href="#appicon">AppIcon.ai</a></td>
       <td><span class="ja">インターネット、写真・画像（任意・生成した画像のギャラリー保存のみ）、アプリ内課金、広告 ID</span><span class="en">Internet, photos &amp; images (optional, only to save generated images to the gallery), in-app purchases, advertising ID</span></td>
-      <td><span class="ja">AI 生成のためにプロンプトなどを当スタジオの生成サーバーに送信し、24 時間以内に削除します。無料回数の管理のため、匿名の識別子と使用回数を Google Firebase に保存します。広告（Google AdMob）が広告 ID などを Google に送信します（下記「<a href="#appicon">AppIcon.ai</a>」の節）</span><span class="en">For AI generation, prompts and related data are sent to our generation server and deleted within 24 hours. To manage free uses, an anonymous identifier and a usage count are stored in Google Firebase. Ads (Google AdMob) send information such as the advertising ID to Google (see the "<a href="#appicon">AppIcon.ai</a>" section below).</span></td>
+      <td><span class="ja">AI 生成のためにプロンプトなどを当スタジオの生成サーバーに送信し、24 時間以内に削除します。無料回数の管理のため、匿名の識別子と使用回数を Google Firebase に保存します。広告（Google AdMob）が広告 ID などを Google に送信します。生成サーバーとの通信は Cloudflare を経由します（下記「<a href="#appicon">AppIcon.ai</a>」の節）</span><span class="en">For AI generation, prompts and related data are sent to our generation server and deleted within 24 hours. To manage free uses, an anonymous identifier and a usage count are stored in Google Firebase. Ads (Google AdMob) send information such as the advertising ID to Google. Communication with the generation server goes through Cloudflare (see the "<a href="#appicon">AppIcon.ai</a>" section below).</span></td>
     </tr>
   </table>
 
@@ -306,10 +306,23 @@ document.addEventListener('DOMContentLoaded', function() {
     </tr>
   </table>
 
+  <p>
+    <span class="ja">通信の経路: 生成サーバーへの送信（上記の情報と下記 3 の翻訳のための文）は、Cloudflare, Inc. が提供する Cloudflare のネットワークを経由し、暗号化された通信（HTTPS）で行われます。Cloudflare は通信を中継するために、IP アドレスなどの接続の情報と送信の内容を処理します（Cloudflare での取り扱いと保存期間は、同社のプライバシーポリシーに従います）。</span>
+    <span class="en">Connection route: Data sent to the generation server (the information above and the text for translation in section 3) goes through the Cloudflare network provided by Cloudflare, Inc., over an encrypted connection (HTTPS). To relay the communication, Cloudflare processes connection information such as your IP address and the content sent (Cloudflare handles and retains it in accordance with its privacy policy).</span>
+  </p>
+  <p>
+    <span class="ja">正規のアプリの確認: 生成サーバーは、Google Play から入手した正規の本アプリからの要求だけを受け付けるようにしています。そのため本アプリは、Google LLC が提供する「Firebase App Check」と「Google Play Integrity API」を使い、本アプリと端末が正規のものであることを示す証明（トークン）を Google から受け取って、生成サーバーに送ります。このとき、確認に使う情報（アプリのパッケージ名や署名、端末の状態の判定など）が Google に送信されます。</span>
+    <span class="en">Verifying the genuine App: The generation server is designed to accept requests only from the genuine App obtained from Google Play. For this purpose, the App uses Firebase App Check and the Google Play Integrity API provided by Google LLC to obtain from Google a proof (token) that the App and your device are genuine, and sends it to the generation server. In doing so, information used for the check (such as the App's package name and signature, and an assessment of your device's state) is sent to Google.</span>
+  </p>
+  <p>
+    <span class="ja">要求の件数の制限: 短い時間に要求が集中するのを防ぐため、生成サーバーは IP アドレスと、証明を復元できない形に変換した値（ハッシュ値）を使って要求の件数を数えます。また、生成した画像を要求した本人だけが受け取れるよう、IP アドレスの情報で照合します。これらはサーバーのメモリ上でだけ扱い、要求の件数は 10 分、照合のための情報は最長 1 時間で消去します。生成サーバーの記録には、時刻・処理の種類・結果・所要時間だけを書き、プロンプト・画像・IP アドレス・証明は書きません。</span>
+    <span class="en">Limiting requests: To prevent too many requests in a short time, the generation server counts requests using your IP address and a value converted from the proof so that the proof cannot be recovered from it (a hash). It also uses your IP address information so that only the person who requested a generated image can receive it. These are handled only in the server's memory: request counts are discarded after 10 minutes, and the information used for matching after at most 1 hour. The generation server's logs record only the time, the type of operation, the result and the processing time; prompts, images, IP addresses and proofs are not recorded.</span>
+  </p>
+
   <p><strong><span class="ja">3. 入力の英訳（当スタジオの生成サーバー）</span><span class="en">3. Translation of your input (our generation server)</span></strong></p>
   <p>
-    <span class="ja">入力した文に日本語が含まれる場合、本アプリはその文を当スタジオが運用する生成サーバーに送り、サーバー上の翻訳機能で英語に翻訳します。入力した文を翻訳のために第三者へ送ることはありません。翻訳のために受け取った文は保存せず、処理のあいだだけ扱います（記録するのは文字数と処理時間だけです）。翻訳した英文は、上記 2 の生成用のプロンプトの一部として扱い、24 時間以内に削除します。</span>
-    <span class="en">If the text you enter contains Japanese, the App sends it to the generation server operated by us, where it is translated into English. The text you enter is never sent to third parties for translation. The text received for translation is not stored; it is handled only while being processed (we record only its length and the processing time). The translated English text is handled as part of the generation prompt described in section 2 and deleted within 24 hours.</span>
+    <span class="ja">入力した文に日本語が含まれる場合、本アプリはその文を当スタジオが運用する生成サーバーに送り、サーバー上の翻訳機能で英語に翻訳します。翻訳のために第三者の翻訳サービスを使うことはありません（通信は上記 2 のとおり Cloudflare を経由します）。翻訳のために受け取った文は保存せず、処理のあいだだけ扱います（記録するのは文字数と処理時間だけです）。翻訳した英文は、上記 2 の生成用のプロンプトの一部として扱い、24 時間以内に削除します。</span>
+    <span class="en">If the text you enter contains Japanese, the App sends it to the generation server operated by us, where it is translated into English. No third-party translation service is used (the communication goes through Cloudflare as described in section 2). The text received for translation is not stored; it is handled only while being processed (we record only its length and the processing time). The translated English text is handled as part of the generation prompt described in section 2 and deleted within 24 hours.</span>
   </p>
 
   <p><strong><span class="ja">4. 無料回数の管理（Google Firebase）</span><span class="en">4. Managing free uses (Google Firebase)</span></strong></p>
@@ -344,14 +357,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <p><strong><span class="ja">9. 安全管理</span><span class="en">9. Security</span></strong></p>
   <p>
-    <span class="ja">生成サーバーへの送信は暗号化された通信（VPN）で、Google Firebase への送信は暗号化された通信（HTTPS）で行われます。生成サーバーに一時的に保存した情報は、上記 2 のとおり 24 時間以内に削除します。</span>
-    <span class="en">Information is sent to the generation server over an encrypted connection (VPN) and to Google Firebase over an encrypted connection (HTTPS). Information temporarily stored on the generation server is deleted within 24 hours as described in section 2.</span>
+    <span class="ja">生成サーバーへの送信は Cloudflare を経由する暗号化された通信（HTTPS）で、Google Firebase への送信は暗号化された通信（HTTPS）で行われます。生成サーバーに一時的に保存した情報は、上記 2 のとおり 24 時間以内に削除します。</span>
+    <span class="en">Information is sent to the generation server over an encrypted connection (HTTPS) through Cloudflare and to Google Firebase over an encrypted connection (HTTPS). Information temporarily stored on the generation server is deleted within 24 hours as described in section 2.</span>
   </p>
 
   <p><strong><span class="ja">10. 保存期間と削除</span><span class="en">10. Retention and deletion</span></strong></p>
   <p>
-    <span class="ja">生成サーバーの情報は 24 時間以内に削除します（翻訳のために受け取った文は保存しません）。Google Firebase の情報（上記 4）は、最後に使ってから 1 年を過ぎると削除します（削除の処理には数日かかる場合があります）。端末内の情報は、本アプリの削除で消去できます。Google に送信された情報の保存期間は、Google のポリシーに従います。</span>
-    <span class="en">Information on the generation server is deleted within 24 hours (text received for translation is not stored). Information in Google Firebase (section 4) is deleted after one year from your last use (deletion may take a few days). Information on your device can be deleted by uninstalling the App. Information sent to Google is retained in accordance with Google's policies.</span>
+    <span class="ja">生成サーバーの情報は 24 時間以内に削除します（翻訳のために受け取った文は保存しません。要求の件数の制限と照合のための IP アドレスなどはメモリ上でだけ扱い、最長 1 時間で消去します）。Google Firebase の情報（上記 4）は、最後に使ってから 1 年を過ぎると削除します（削除の処理には数日かかる場合があります）。端末内の情報は、本アプリの削除で消去できます。Google および Cloudflare に送信された情報の保存期間は、各社のポリシーに従います。</span>
+    <span class="en">Information on the generation server is deleted within 24 hours (text received for translation is not stored; IP addresses and other data used for limiting and matching requests are held only in memory and discarded after at most 1 hour). Information in Google Firebase (section 4) is deleted after one year from your last use (deletion may take a few days). Information on your device can be deleted by uninstalling the App. Information sent to Google and Cloudflare is retained in accordance with each company's policies.</span>
   </p>
 
   <p><strong><span class="ja">11. お問い合わせ</span><span class="en">11. Contact</span></strong></p>
