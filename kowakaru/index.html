@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="コワカル — 読むとじわっと怖くなる「意味が分かると怖い話」。話の中のおかしな一文や挿絵の違和感を見つけてタップ。全100話・無料・Android。">
+<meta property="og:title" content="コワカル｜意味が分かると怖い話">
+<meta property="og:description" content="話の中のおかしな一文や挿絵の違和感を見つけてタップ。当てると、絵が変わる。全100話・無料。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quietstudio.net/kowakaru/">
+<meta property="og:image" content="https://quietstudio.net/icons/kowakaru.png">
+<link rel="canonical" href="https://quietstudio.net/kowakaru/">
+<title>コワカル｜意味が分かると怖い話</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'Helvetica Neue', sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.6; }
+
+body.lang-ja .en { display: none !important; }
+body.lang-en .ja { display: none !important; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e2e8f0;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 32px; height: 52px;
+}
+.nav-logo { font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #0f172a; text-decoration: none; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { text-decoration: none; font-size: 13px; color: #64748b; font-weight: 500; transition: color 0.15s; }
+.nav-links a:hover { color: #0f172a; }
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 56px 24px 48px;
+  background: #1a1014;
+  border-bottom: 1px solid #3a2028;
+}
+.hero-icon { width: 88px; height: 88px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
+.hero h1 { font-size: clamp(22px, 3.5vw, 30px); font-weight: 800; color: #f1f1f1; letter-spacing: -0.3px; margin-bottom: 6px; line-height: 1.4; }
+.hero-sub { font-size: 14px; color: #b8a0a8; margin-bottom: 28px; line-height: 1.7; }
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #c0392b; color: white;
+  font-size: 14px; font-weight: 700;
+  padding: 12px 28px; border-radius: 8px; text-decoration: none;
+  transition: opacity 0.15s;
+}
+.hero-cta:hover { opacity: 0.85; }
+.hero-cta svg { width: 18px; height: 18px; fill: currentColor; }
+.hero-free { display: block; margin-top: 10px; font-size: 12px; color: #8a7078; }
+
+/* SECTIONS */
+section { max-width: 640px; margin: 0 auto; padding: 52px 24px; }
+.section-divider { border: none; border-top: 1px solid #e2e8f0; }
+.section-label { font-size: 11px; letter-spacing: 3px; color: #94a3b8; text-transform: uppercase; font-weight: 600; margin-bottom: 6px; }
+.section-title { font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 20px; }
+
+/* HOW TO PLAY */
+.steps { display: flex; flex-direction: column; gap: 24px; }
+.step { display: flex; gap: 16px; align-items: flex-start; }
+.step-num {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+  background: #0f172a; color: white;
+  font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.step-text { font-size: 14px; color: #334155; padding-top: 3px; }
+
+/* SCREENSHOTS */
+.screenshots {
+  display: flex; gap: 12px;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding: 8px 0 16px;
+  margin: 0 -24px; padding-left: 24px; padding-right: 24px;
+}
+.screenshots::-webkit-scrollbar { display: none; }
+.screenshots img {
+  flex-shrink: 0; width: 200px; border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  scroll-snap-align: start;
+}
+
+/* SNS */
+.sns-list { display: flex; flex-direction: column; gap: 10px; }
+.sns-item {
+  background: white; border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 14px 18px;
+  display: flex; align-items: center; gap: 14px;
+  text-decoration: none; color: #0f172a;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.sns-item:hover { border-color: #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.sns-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; }
+.sns-icon.yt { background: #fee2e2; color: #dc2626; }
+.sns-icon.ig { background: #fce7f3; color: #db2777; }
+.sns-icon.tk { background: #f0fdf4; color: #16a34a; }
+.sns-info { flex: 1; min-width: 0; }
+.sns-name { font-size: 13px; font-weight: 700; }
+.sns-handle { font-size: 11px; color: #94a3b8; }
+
+/* FOOTER */
+footer { text-align: center; padding: 28px 24px; border-top: 1px solid #e2e8f0; font-size: 12px; color: #94a3b8; background: white; }
+footer a { color: #64748b; text-decoration: none; }
+footer a:hover { color: #0f172a; }
+.footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var lang = navigator.language.startsWith('ja') ? 'ja' : 'en';
+  document.body.className = 'lang-' + lang;
+});
+</script>
+</head>
+<body class="lang-ja">
+
+<nav>
+  <a href="/" class="nav-logo">Quiet Studio</a>
+  <div class="nav-links">
+    <a href="#howto"><span class="ja">遊び方</span><span class="en">How to Play</span></a>
+    <a href="#sns"><span class="ja">公式SNS</span><span class="en">SNS</span></a>
+  </div>
+</nav>
+
+<div class="hero">
+  <img src="/icons/kowakaru.png" alt="コワカル" class="hero-icon">
+  <h1>
+    <span class="ja">コワカル</span>
+    <span class="en">Kowakaru</span>
+  </h1>
+  <p class="hero-sub">
+    <span class="ja">読むとじわっと怖くなる「意味が分かると怖い話」。<br>話の中のおかしな一文や、挿絵の違和感を見つけてタップ。<br>当てると、絵が変わる。</span>
+    <span class="en">Scary stories that creep up on you.<br>Find the odd sentence or the clue hidden in the illustration — tap it.<br>Get it right, and the picture changes.</span>
+  </p>
+  <a href="https://play.google.com/store/apps/details?id=net.quietstudio.kowakaru" class="hero-cta" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.4l2.553 1.478a1 1 0 0 1 0 1.73l-2.553 1.478-2.507-2.507 2.507-2.18zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
+    <span>Google Play</span>
+  </a>
+  <span class="hero-free">
+    <span class="ja">無料 · 全100話 · Android</span>
+    <span class="en">Free · 100 Stories · Android</span>
+  </span>
+</div>
+
+<section id="howto">
+  <div class="section-label">How to Play</div>
+  <div class="section-title">
+    <span class="ja">遊び方</span>
+    <span class="en">How to Play</span>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <span class="ja">短い怖い話を読む。話の中に「おかしな一文」が隠れている。</span>
+        <span class="en">Read a short scary story. There's an odd sentence hidden inside.</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <span class="ja">おかしいと思った一文をタップ。挿絵の違和感もタップで指摘。</span>
+        <span class="en">Tap the sentence that feels wrong. You can also tap oddities in the illustration.</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <span class="ja">正解すると、挿絵が「答えの絵」に変わる。解説を読むと、もう一段ゾッとする。</span>
+        <span class="en">Get it right, and the illustration changes to reveal the answer. The explanation makes it even creepier.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="screenshots">
+    <img src="images/screenshot_01.png" alt="タイトル画面">
+    <img src="images/screenshot_03.png" alt="挿絵をタップ">
+    <img src="images/screenshot_04.png" alt="正解 — 絵が変わる">
+    <img src="images/screenshot_06.png" alt="全100話・5テーマ">
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="sns">
+  <div class="section-label">Official</div>
+  <div class="section-title">
+    <span class="ja">公式SNS</span>
+    <span class="en">Official Accounts</span>
+  </div>
+  <div class="sns-list">
+    <a href="https://www.youtube.com/@kowakaru_official" class="sns-item" target="_blank" rel="noopener noreferrer">
+      <div class="sns-icon yt">&#9654;</div>
+      <div class="sns-info">
+        <div class="sns-name">YouTube</div>
+        <div class="sns-handle">@kowakaru_official</div>
+      </div>
+    </a>
+    <a href="https://www.instagram.com/kowakaru_official/" class="sns-item" target="_blank" rel="noopener noreferrer">
+      <div class="sns-icon ig">&#9679;</div>
+      <div class="sns-info">
+        <div class="sns-name">Instagram</div>
+        <div class="sns-handle">@kowakaru_official</div>
+      </div>
+    </a>
+    <a href="https://www.tiktok.com/@kowakaru_official" class="sns-item" target="_blank" rel="noopener noreferrer">
+      <div class="sns-icon tk">&#9836;</div>
+      <div class="sns-info">
+        <div class="sns-name">TikTok</div>
+        <div class="sns-handle">@kowakaru_official</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<footer>
+  <div class="footer-links">
+    <a href="/"><span class="ja">Quiet Studio トップ</span><span class="en">Quiet Studio Home</span></a>
+    <span style="color:#e2e8f0">·</span>
+    <a href="/privacy.html#kowakaru"><span class="ja">プライバシーポリシー</span><span class="en">Privacy Policy</span></a>
+    <span style="color:#e2e8f0">·</span>
+    <a href="mailto:info@quietstudio.net"><span class="ja">お問い合わせ</span><span class="en">Contact</span></a>
+  </div>
+  <p>© 2026 Quiet Studio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
