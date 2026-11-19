@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <span class="en">Privacy Policy</span>
   </h1>
   <p class="updated">
-    <span class="ja">最終更新日: 2026年11月6日</span>
-    <span class="en">Last updated: November 6, 2026</span>
+    <span class="ja">最終更新日: 2026年11月19日</span>
+    <span class="en">Last updated: November 19, 2026</span>
   </p>
 
   <p>
@@ -110,8 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </tr>
     <tr>
       <td><a href="#kowakaru"><span class="ja">コワカル</span><span class="en">Kowakaru</span></a></td>
-      <td><span class="ja">インターネット、広告 ID</span><span class="en">Internet, advertising ID</span></td>
-      <td><span class="ja">当スタジオは収集しません。読んだ話の記録などは端末内にのみ保存されます。広告（Google AdMob）が広告 ID などを Google に送信します（下記「<a href="#kowakaru">コワカル</a>」の節）</span><span class="en">We do not collect it. Reading progress and other records are stored only on your device. Ads (Google AdMob) send information such as the advertising ID to Google (see the "<a href="#kowakaru">Kowakaru</a>" section below).</span></td>
+      <td><span class="ja">インターネット、ネットワークの状態（Wi-Fiかどうかの確認）、広告 ID</span><span class="en">Internet, network state (to check whether you are on Wi-Fi), advertising ID</span></td>
+      <td><span class="ja">当スタジオは収集しません。読んだ話の記録などは端末内にのみ保存されます。新しい話を受け取るために配信サーバー（GitHub Pages）に接続します。広告（Google AdMob）が広告 ID などを Google に送信します（下記「<a href="#kowakaru">コワカル</a>」の節）</span><span class="en">We do not collect it. Reading progress and other records are stored only on your device. The App connects to our distribution server (GitHub Pages) to receive new stories. Ads (Google AdMob) send information such as the advertising ID to Google (see the "<a href="#kowakaru">Kowakaru</a>" section below).</span></td>
     </tr>
     <tr>
       <td><a href="#appicon">AppIcon.ai</a></td>
@@ -182,8 +182,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <p><strong><span class="ja">1. 端末内だけで保存する情報</span><span class="en">1. Information stored only on your device</span></strong></p>
   <p>
-    <span class="ja">本アプリは、読んだ話・正解した話・答えを見た話の記録、ヒントの残りの数、音の設定、アプリ内レビューを表示したかどうかを、端末の中だけに保存します。当スタジオのサーバーに送ることはありません。アカウントの登録・ログイン・課金はありません。これらは、本アプリを端末から削除（アンインストール）すると消去されます。アプリ内の「読んだ記録を消す」で、読んだ話・正解した話・答えを見た話の記録を消すこともできます（ヒントの残りの数・音の設定は消えません）。</span>
-    <span class="en">The App stores the following only on your device: which stories you have read, answered correctly or viewed the answer to, the number of hints remaining, sound settings, and whether the in-app review prompt has been shown. This information is never sent to our servers. There is no account registration, login or in-app purchases. It is deleted when you uninstall the App. You can also clear your reading history (stories read, answered correctly and answers viewed) using "Clear reading history" in the App (the number of hints remaining and sound settings are not cleared).</span>
+    <span class="ja">本アプリは、読んだ話・正解した話・答えを見た話の記録、ヒントの残りの数、音の設定、アプリ内レビューを表示した時期、受け取った新しい話（文章・挿絵）と、その受け取りの管理のための情報（受け取った話の集の一覧、最初に受け取った日、配信の一覧を最後に確かめた時刻など）を、端末の中だけに保存します。当スタジオのサーバーに送ることはありません。アカウントの登録・ログイン・課金はありません。これらは、本アプリを端末から削除（アンインストール）すると消去されます。アプリ内の「読んだ記録を消す」で、読んだ話・正解した話・答えを見た話の記録を消すこともできます（ヒントの残りの数・音の設定・受け取った話は消えません）。受け取った話は、設定の「ダウンロードした話」で消すことができます。</span>
+    <span class="en">The App stores the following only on your device: the stories you have read, answered correctly or viewed the answer for; the number of remaining hints; sound settings; when an in-app review prompt was shown; and new stories you have received (text and illustrations) together with information for managing them (such as the list of received story collections, the date you first received each one, and when the App last checked for new stories). This information is not sent to our servers. There is no account registration, login or in-app purchase. This information is deleted when you uninstall the App. You can also clear the records of stories read, answered correctly and answers viewed with "Clear reading history" in the App (the number of remaining hints, sound settings and received stories are not cleared). You can delete received stories in Settings under "Downloaded stories".</span>
   </p>
 
   <p><strong><span class="ja">2. 広告（Google AdMob）</span><span class="en">2. Advertising (Google AdMob)</span></strong></p>
@@ -192,31 +192,49 @@ document.addEventListener('DOMContentLoaded', function() {
     <span class="en">The App shows ads served by Google AdMob, an ad service provided by Google LLC, including banner ads, interstitial ads and rewarded video ads. To show ads, the Google ad SDK built into the App sends the information listed in "<a href="#admob-common">About Advertising</a>" above (device identifiers such as the advertising ID, IP address, interactions, diagnostic information and device information) to Google. We do not receive this information. See "<a href="#admob-common">About Advertising</a>" for how to stop personalized ads.</span>
   </p>
 
-  <p><strong><span class="ja">3. 「友だちに出題」機能</span><span class="en">3. "Share with friends" feature</span></strong></p>
+  <p><strong><span class="ja">3. 新しい話の受け取り（ダウンロード）</span><span class="en">3. Receiving new stories (downloads)</span></strong></p>
+  <p>
+    <span class="ja">本アプリは、新しい話を受け取るために、アプリを開いている間に、話の配信サーバー（現在は GitHub, Inc. が提供する GitHub Pages を利用しています）に接続します。接続するのは、起動したとき、しばらく時間がたってアプリに戻ったとき、利用者が受け取りを選んだときです。Wi-Fi に接続しているときは自動で受け取り、モバイル通信のときは受け取る前に確認します。この確認のために、端末のネットワークの状態（Wi-Fi かどうか）を調べます。</span>
+    <span class="en">To receive new stories, the App connects to our story distribution server (currently hosted on GitHub Pages, provided by GitHub, Inc.) while the App is open: when it starts, when you return to it after some time, and when you choose to receive stories. On Wi-Fi the App receives new stories automatically; on mobile data it asks you first. To do this, the App checks the device's network state (whether it is on Wi-Fi).</span>
+  </p>
+  <p>
+    <span class="ja">送るのは、話の一覧と話のファイルを求める通信だけです。広告 ID などの利用者を識別する情報、読んだ話の記録、設定は送りません。通信は暗号化されています。</span>
+    <span class="en">The App only sends requests for the story list and story files. It does not send information that identifies you (such as the advertising ID), your reading history or your settings. The connection is encrypted.</span>
+  </p>
+  <p>
+    <span class="ja">通信の性質上、端末の IP アドレス、通信の日時、アプリと端末の種類などの通信の情報が配信サーバーに届き、配信の事業者（GitHub, Inc.）がセキュリティなどのために記録することがあります。当スタジオはこの記録を受け取らず、利用しません。配信の事業者による取り扱いは、<a href="https://docs.github.com/ja/site-policy/privacy-policies/github-general-privacy-statement">GitHub のプライバシーに関する声明</a>をご確認ください。</span>
+    <span class="en">Because of how internet connections work, network information such as your device's IP address, the time of access and the type of app and device reaches the distribution server, and the provider (GitHub, Inc.) may log it for security and other purposes. We do not receive or use these logs. For how the provider handles this information, see the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</span>
+  </p>
+  <p>
+    <span class="ja">受け取った話は端末の中に保存します（上記 1）。</span>
+    <span class="en">Received stories are stored on your device (see 1 above).</span>
+  </p>
+
+  <p><strong><span class="ja">4. 「友だちに出題」機能</span><span class="en">4. "Share with friends" feature</span></strong></p>
   <p>
     <span class="ja">「友だちに出題」は、端末の共有機能に話の題名とストアの URL を渡すだけです。当スタジオのサーバーに情報を送信することはありません。</span>
     <span class="en">"Share with friends" simply passes the story title and the store URL to your device's sharing function. No information is sent to our servers.</span>
   </p>
 
-  <p><strong><span class="ja">4. アプリ内レビュー</span><span class="en">4. In-app review</span></strong></p>
+  <p><strong><span class="ja">5. アプリ内レビュー</span><span class="en">5. In-app review</span></strong></p>
   <p>
     <span class="ja">アプリ内レビューの評価は、Google Play が扱い、当スタジオには届きません。</span>
     <span class="en">In-app review ratings are handled by Google Play and are not received by us.</span>
   </p>
 
-  <p><strong><span class="ja">5. 対象年齢</span><span class="en">5. Age</span></strong></p>
+  <p><strong><span class="ja">6. 対象年齢</span><span class="en">6. Age</span></strong></p>
   <p>
     <span class="ja">本アプリは 13 歳未満の子どもを対象としたものではなく、子どもから意図的に情報を集めることはありません。</span>
     <span class="en">The App is not directed to children under 13, and we do not knowingly collect information from children.</span>
   </p>
 
-  <p><strong><span class="ja">6. 保存期間と削除</span><span class="en">6. Retention and deletion</span></strong></p>
+  <p><strong><span class="ja">7. 保存期間と削除</span><span class="en">7. Retention and deletion</span></strong></p>
   <p>
-    <span class="ja">当スタジオは、本アプリの利用者の情報をサーバーに保存しません。端末内の情報は、本アプリの削除で消去できます。読んだ話・正解した話・答えを見た話の記録は、アプリ内の「読んだ記録を消す」でも消去できます。Google に送信された情報（広告 SDK による情報）の保存期間は、Google のポリシーに従います。広告 ID は、上記「<a href="#admob-common">広告について</a>」の方法で削除・リセットできます。</span>
-    <span class="en">We do not store information about the App's users on any server. Information on your device can be deleted by uninstalling the App. Your reading history (stories read, answered correctly and answers viewed) can also be cleared using "Clear reading history" in the App. Information sent to Google (by the ad SDK) is retained in accordance with Google's policies. You can delete or reset your advertising ID as described in "<a href="#admob-common">About Advertising</a>" above.</span>
+    <span class="ja">当スタジオは、本アプリの利用者の情報をサーバーに保存しません。端末内の情報は、本アプリの削除で消去できます。読んだ話・正解した話・答えを見た話の記録は、アプリ内の「読んだ記録を消す」でも消去できます。受け取った話は、設定の「ダウンロードした話」でも消去できます（消しても読んだ記録は残ります）。Google に送信された情報（広告 SDK による情報）の保存期間は、Google のポリシーに従います。配信サーバーに届いた通信の情報の保存期間は、配信の事業者のポリシーに従います。広告 ID は、上記「<a href="#admob-common">広告について</a>」の方法で削除・リセットできます。</span>
+    <span class="en">We do not store information about the App's users on any server. Information on your device can be deleted by uninstalling the App. Your reading history (stories read, answered correctly and answers viewed) can also be cleared using "Clear reading history" in the App. Received stories can also be deleted in Settings under "Downloaded stories" (your reading history is kept). Information sent to Google (by the ad SDK) is retained in accordance with Google's policies. Network information that reaches the distribution server is retained in accordance with the distribution provider's policies. You can delete or reset your advertising ID as described in "<a href="#admob-common">About Advertising</a>" above.</span>
   </p>
 
-  <p><strong><span class="ja">7. お問い合わせ</span><span class="en">7. Contact</span></strong></p>
+  <p><strong><span class="ja">8. お問い合わせ</span><span class="en">8. Contact</span></strong></p>
   <p>
     <span class="ja">本アプリのプライバシーに関するお問い合わせ: <a href="mailto:info@quietstudio.net">info@quietstudio.net</a>（Quiet Studio）</span>
     <span class="en">For privacy inquiries about the App: <a href="mailto:info@quietstudio.net">info@quietstudio.net</a> (Quiet Studio)</span>
