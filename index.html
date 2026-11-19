@@ -58,9 +58,10 @@ section { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
   background: white; border-radius: 10px;
   border: 1px solid #e2e8f0;
   padding: 14px 18px;
-  display: flex; align-items: center; gap: 14px;
+  display: flex; align-items: flex-start; gap: 14px;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
+.app-action { padding-top: 2px; }
 .app-item:hover { border-color: #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
 .app-icon { width: 42px; height: 42px; flex-shrink: 0; background: #0f172a; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; overflow: hidden; }
 .app-icon img { width: 100%; height: 100%; object-fit: cover; }
@@ -75,7 +76,7 @@ section { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
   transition: opacity 0.15s;
 }
 .app-action a:hover { opacity: 0.75; }
-.badge-soon { font-size: 11px; color: #94a3b8; border: 1px solid #e2e8f0; border-radius: 5px; padding: 5px 10px; white-space: nowrap; }
+.app-desc { font-size: 12px; color: #64748b; line-height: 1.6; margin-top: 4px; }
 
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -140,10 +141,21 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="app-list">
 
     <div class="app-item">
+      <div class="app-icon"><img src="icons/kowakaru.png" alt="Kowakaru"></div>
+      <div class="app-info">
+        <div class="app-name"><a href="/kowakaru/" style="color:inherit;text-decoration:none"><span class="ja">コワカル</span><span class="en">Kowakaru</span></a></div>
+        <div class="app-cat">Entertainment · <span class="ja">意味が分かると怖い話</span><span class="en">Scary Stories</span></div>
+        <div class="app-desc"><span class="ja">短い怖い話を読んで、おかしな一文や挿絵の違和感をタップで指摘。全100話・無料。</span><span class="en">Read short scary stories and tap to find the odd sentence or the clue in the illustration. 100 stories, free.</span></div>
+      </div>
+      <div class="app-action"><a href="https://play.google.com/store/apps/details?id=net.quietstudio.kowakaru" target="_blank" rel="noopener noreferrer">Google Play</a></div>
+    </div>
+
+    <div class="app-item">
       <div class="app-icon"><img src="icons/hizo.png" alt="Hizo"></div>
       <div class="app-info">
         <div class="app-name">Hizo</div>
         <div class="app-cat">Utility · <span class="ja">ファイル保管庫</span><span class="en">File Vault</span></div>
+        <div class="app-desc"><span class="ja">写真や動画を端末内だけで安全に保管。サーバーに一切送信しないプライベート保管庫。</span><span class="en">Keep photos and videos private on your device. Nothing is sent to any server.</span></div>
       </div>
       <div class="app-action"><a href="https://play.google.com/store/apps/details?id=jp.app.kura" target="_blank" rel="noopener noreferrer">Google Play</a></div>
     </div>
@@ -153,66 +165,9 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="app-info">
         <div class="app-name">NISA iDeCo Simulator</div>
         <div class="app-cat">Finance · <span class="ja">資産シミュレーション</span><span class="en">Investment Simulator</span></div>
+        <div class="app-desc"><span class="ja">NISAやiDeCoの積立シミュレーション。将来の資産をグラフで直感的に確認できます。</span><span class="en">Simulate NISA and iDeCo investments. See your projected assets on intuitive charts.</span></div>
       </div>
       <div class="app-action"><a href="https://play.google.com/store/apps/details?id=jp.app.nisa_ideco_simulator" target="_blank" rel="noopener noreferrer">Google Play</a></div>
-    </div>
-
-    <div class="app-item">
-      <div class="app-icon"><img src="icons/kowakaru.png" alt="Kowakaru"></div>
-      <div class="app-info">
-        <div class="app-name"><a href="/kowakaru/" style="color:inherit;text-decoration:none"><span class="ja">コワカル</span><span class="en">Kowakaru</span></a></div>
-        <div class="app-cat">Entertainment · <span class="ja">意味が分かると怖い話</span><span class="en">Scary Stories</span></div>
-      </div>
-      <div class="app-action"><a href="https://play.google.com/store/apps/details?id=net.quietstudio.kowakaru" target="_blank" rel="noopener noreferrer">Google Play</a></div>
-    </div>
-
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<section id="upcoming">
-  <div class="section-label">Upcoming</div>
-  <div class="section-title">
-    <span class="ja">公開予定のアプリ</span>
-    <span class="en">Upcoming Apps</span>
-  </div>
-  <div class="app-list">
-
-    <div class="app-item">
-      <div class="app-icon">📐</div>
-      <div class="app-info">
-        <div class="app-name"><span class="ja">水準器</span><span class="en">Spirit Level</span></div>
-        <div class="app-cat">Utility · <span class="ja">計測ツール</span><span class="en">Measurement</span></div>
-      </div>
-      <div class="app-action"><span class="badge-soon">Coming Soon</span></div>
-    </div>
-
-    <div class="app-item">
-      <div class="app-icon">🔊</div>
-      <div class="app-info">
-        <div class="app-name"><span class="ja">騒音計</span><span class="en">Noise Meter</span></div>
-        <div class="app-cat">Utility · <span class="ja">計測ツール</span><span class="en">Measurement</span></div>
-      </div>
-      <div class="app-action"><span class="badge-soon">Coming Soon</span></div>
-    </div>
-
-    <div class="app-item">
-      <div class="app-icon">🎵</div>
-      <div class="app-info">
-        <div class="app-name"><span class="ja">メトロノーム</span><span class="en">Metronome</span></div>
-        <div class="app-cat">Music · <span class="ja">音楽ツール</span><span class="en">Music Tool</span></div>
-      </div>
-      <div class="app-action"><span class="badge-soon">Coming Soon</span></div>
-    </div>
-
-    <div class="app-item">
-      <div class="app-icon">🎨</div>
-      <div class="app-info">
-        <div class="app-name">AppIcon.ai</div>
-        <div class="app-cat">Utility · <span class="ja">AIアイコン生成</span><span class="en">AI Icon Generator</span></div>
-      </div>
-      <div class="app-action"><span class="badge-soon">Coming Soon</span></div>
     </div>
 
   </div>
@@ -232,8 +187,12 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="value">Quiet Studio</div>
     </div>
     <div class="about-item">
+      <div class="label"><span class="ja">開業</span><span class="en">Established</span></div>
+      <div class="value">2026</div>
+    </div>
+    <div class="about-item">
       <div class="label"><span class="ja">活動地域</span><span class="en">Location</span></div>
-      <div class="value"><span class="ja">日本</span><span class="en">Japan</span></div>
+      <div class="value"><span class="ja">日本・大阪</span><span class="en">Osaka, Japan</span></div>
     </div>
     <div class="about-item">
       <div class="label"><span class="ja">事業内容</span><span class="en">Business</span></div>
@@ -243,10 +202,21 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="label"><span class="ja">プラットフォーム</span><span class="en">Platform</span></div>
       <div class="value">Android (Google Play)</div>
     </div>
+    <div class="about-item">
+      <div class="label"><span class="ja">開発技術</span><span class="en">Technology</span></div>
+      <div class="value">Flutter / Dart</div>
+    </div>
   </div>
   <div class="about-desc">
-    <span class="ja">Quiet Studioは、日常生活をより便利・豊かにするモバイルアプリを開発・提供しています。シンプルで使いやすいデザインを大切にし、ユーザーの皆様の生活に寄り添うアプリ作りを目指しています。</span>
-    <span class="en">Quiet Studio develops mobile apps designed to enrich everyday life — simple, intuitive tools that make a real difference.</span>
+    <span class="ja">Quiet Studioは、個人事業として2026年に開業し、モバイルアプリの企画・開発・運営を行っています。エンターテインメントからファイナンス、ユーティリティまで、シンプルで使いやすいアプリをGoogle Playで提供しています。ユーザーのプライバシーを最優先に、端末内で完結する設計を基本方針としています。</span>
+    <span class="en">Quiet Studio is a sole proprietorship established in 2026, specializing in the planning, development and operation of mobile applications. We publish apps on Google Play across entertainment, finance and utility categories, with a focus on simplicity and usability. Privacy is our top priority — our apps are designed to work locally on your device whenever possible.</span>
+  </div>
+  <div style="margin-top: 12px;">
+    <a href="https://play.google.com/store/apps/developer?id=Quiet+Studio+Apps" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#64748b;text-decoration:none;transition:color 0.15s;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.4l2.553 1.478a1 1 0 0 1 0 1.73l-2.553 1.478-2.507-2.507 2.507-2.18zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
+      <span class="ja">Google Play でアプリを見る →</span>
+      <span class="en">View our apps on Google Play →</span>
+    </a>
   </div>
 </section>
 
