@@ -97,17 +97,22 @@ section { max-width: 640px; margin: 0 auto; padding: 52px 24px; }
 .feature-card .feature-text { font-size: 13px; color: #64748b; line-height: 1.7; }
 .feature-new { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 3px; background: #c0392b; color: white; margin-right: 6px; vertical-align: middle; }
 .feature-gallery {
-  display: flex; gap: 12px;
-  overflow-x: auto; -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
   padding: 16px 0 4px;
-  margin: 0 -20px; padding-left: 20px; padding-right: 20px;
+}
+@media (max-width: 500px) {
+  .feature-gallery {
+    display: flex; gap: 12px;
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    margin: 0 -20px; padding-left: 20px; padding-right: 20px;
+  }
+  .feature-gallery img, .feature-gallery video { flex-shrink: 0; width: 240px; scroll-snap-align: start; }
 }
 .feature-gallery img, .feature-gallery video {
-  flex-shrink: 0; width: 240px; border-radius: 10px;
+  width: 100%; height: auto; border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-  scroll-snap-align: start;
-  background: #1a1014;
+  background: #1a1014; aspect-ratio: 4/3; object-fit: cover;
 }
 @media (prefers-reduced-motion: reduce) {
   .feature-gallery video { display: none; }
