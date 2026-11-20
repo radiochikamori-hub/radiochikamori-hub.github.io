@@ -13,7 +13,29 @@
 <title>コワカル｜意味が分かると怖い話</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, 'Helvetica Neue', sans-serif; background: #1a1418; color: #e2d8dc; line-height: 1.6; }
+body {
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  background: #1a1418; color: #e2d8dc; line-height: 1.6;
+  background-image:
+    radial-gradient(ellipse 1px 1px at 15% 25%, rgba(192,57,43,0.12) 0%, transparent 100%),
+    radial-gradient(ellipse 1px 1px at 85% 15%, rgba(192,57,43,0.08) 0%, transparent 100%),
+    radial-gradient(ellipse 1px 1px at 45% 75%, rgba(192,57,43,0.1) 0%, transparent 100%),
+    radial-gradient(ellipse 600px 600px at 50% 800px, rgba(192,57,43,0.04) 0%, transparent 70%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 80px,
+      rgba(255,255,255,0.015) 80px,
+      rgba(255,255,255,0.015) 81px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 80px,
+      rgba(255,255,255,0.015) 80px,
+      rgba(255,255,255,0.015) 81px
+    );
+}
 
 body.lang-ja .en { display: none !important; }
 body.lang-en .ja { display: none !important; }
@@ -51,7 +73,7 @@ nav {
 .hero-bg::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(to right, rgba(10,6,8,0.88) 0%, rgba(10,6,8,0.7) 40%, rgba(10,6,8,0.3) 70%, rgba(10,6,8,0.15) 100%);
+  background: linear-gradient(to right, rgba(10,6,8,0.82) 0%, rgba(10,6,8,0.5) 35%, rgba(10,6,8,0.12) 65%, rgba(10,6,8,0.05) 100%);
 }
 .hero-content {
   position: relative; z-index: 1;
@@ -75,7 +97,7 @@ nav {
 @media (max-width: 600px) {
   .hero { min-height: 420px; align-items: flex-end; padding-bottom: 36px; }
   .hero-bg::after {
-    background: linear-gradient(to top, rgba(10,6,8,0.92) 0%, rgba(10,6,8,0.6) 50%, rgba(10,6,8,0.25) 100%);
+    background: linear-gradient(to top, rgba(10,6,8,0.88) 0%, rgba(10,6,8,0.45) 50%, rgba(10,6,8,0.15) 100%);
   }
   .hero-content { max-width: 100%; padding-left: 0; text-align: center; }
   .hero-icon { margin-left: auto; margin-right: auto; }
