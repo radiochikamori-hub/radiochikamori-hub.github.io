@@ -103,11 +103,17 @@ section { max-width: 640px; margin: 0 auto; padding: 52px 24px; }
   padding: 16px 0 4px;
   margin: 0 -20px; padding-left: 20px; padding-right: 20px;
 }
-.feature-gallery img {
+.feature-gallery img, .feature-gallery video {
   flex-shrink: 0; width: 240px; border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
   scroll-snap-align: start;
+  background: #1a1014;
 }
+@media (prefers-reduced-motion: reduce) {
+  .feature-gallery video { display: none; }
+  .feature-gallery .reduced-motion-img { display: block; }
+}
+.feature-gallery .reduced-motion-img { display: none; }
 
 /* VERSION BADGE */
 .version-badge {
@@ -150,6 +156,19 @@ footer a:hover { color: #0f172a; }
 document.addEventListener('DOMContentLoaded', function() {
   var lang = navigator.language.startsWith('ja') ? 'ja' : 'en';
   document.body.className = 'lang-' + lang;
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.play(); } else { e.target.pause(); }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.feature-gallery video').forEach(function(v) {
+      v.removeAttribute('autoplay');
+      v.pause();
+      observer.observe(v);
+    });
+  }
 });
 </script>
 </head>
@@ -238,14 +257,24 @@ document.addEventListener('DOMContentLoaded', function() {
         <span class="ja">灯りのゆらぎ、雨、霧 — 挿絵に動きの効果が付きました。話の雰囲気がぐっと深くなります。</span>
         <span class="en">Flickering lights, rain, fog — illustrations now feature animated effects that deepen the atmosphere of each story.</span>
       </div>
-      <!-- 動画エフェクト付き挿絵の画像を追加する場所 -->
-      <!--
       <div class="feature-gallery">
-        <img src="images/effect_01.png" alt="灯りのゆらぎ">
-        <img src="images/effect_02.png" alt="雨の効果">
-        <img src="images/effect_03.png" alt="霧の効果">
+        <video autoplay muted loop playsinline preload="metadata" poster="videos/hp_50_poster.jpg" width="720" height="540" aria-label="雨の中の電話ボックス。雨が降り、明かりがまたたく">
+          <source src="videos/hp_50_loop.webm" type="video/webm"><source src="videos/hp_50_loop.mp4" type="video/mp4">
+        </video>
+        <img class="reduced-motion-img" src="videos/hp_50_poster.jpg" alt="雨の中の電話ボックス">
+        <video autoplay muted loop playsinline preload="none" poster="videos/hp_37_poster.jpg" width="720" height="540" aria-label="窓の外で雪が降る">
+          <source src="videos/hp_37_loop.webm" type="video/webm"><source src="videos/hp_37_loop.mp4" type="video/mp4">
+        </video>
+        <img class="reduced-motion-img" src="videos/hp_37_poster.jpg" alt="窓の外で雪が降る">
+        <video autoplay muted loop playsinline preload="none" poster="videos/hp_61_poster.jpg" width="720" height="540" aria-label="ラジオの灯りのゆらぎ">
+          <source src="videos/hp_61_loop.webm" type="video/webm"><source src="videos/hp_61_loop.mp4" type="video/mp4">
+        </video>
+        <img class="reduced-motion-img" src="videos/hp_61_poster.jpg" alt="ラジオの灯りのゆらぎ">
+        <video autoplay muted loop playsinline preload="none" poster="videos/hp_81_poster.jpg" width="720" height="540" aria-label="赤い落ち葉が舞う">
+          <source src="videos/hp_81_loop.webm" type="video/webm"><source src="videos/hp_81_loop.mp4" type="video/mp4">
+        </video>
+        <img class="reduced-motion-img" src="videos/hp_81_poster.jpg" alt="赤い落ち葉が舞う">
       </div>
-      -->
     </div>
     <div class="feature-card">
       <div class="feature-title"><span class="feature-new">NEW</span><span class="ja">新しい話の追加配信</span><span class="en">New Story Delivery</span></div>
