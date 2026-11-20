@@ -86,6 +86,37 @@ section { max-width: 640px; margin: 0 auto; padding: 52px 24px; }
   scroll-snap-align: start;
 }
 
+/* FEATURES */
+.features { display: flex; flex-direction: column; gap: 16px; }
+.feature-card {
+  background: white; border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 18px 20px;
+}
+.feature-card .feature-title { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.feature-card .feature-text { font-size: 13px; color: #64748b; line-height: 1.7; }
+.feature-new { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 3px; background: #c0392b; color: white; margin-right: 6px; vertical-align: middle; }
+.feature-gallery {
+  display: flex; gap: 12px;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding: 16px 0 4px;
+  margin: 0 -20px; padding-left: 20px; padding-right: 20px;
+}
+.feature-gallery img {
+  flex-shrink: 0; width: 240px; border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  scroll-snap-align: start;
+}
+
+/* VERSION BADGE */
+.version-badge {
+  display: inline-block; font-size: 11px; font-weight: 600;
+  padding: 4px 10px; border-radius: 6px;
+  background: rgba(192, 57, 43, 0.15); color: #c0392b;
+  margin-bottom: 16px;
+}
+
 /* SNS */
 .sns-list { display: flex; flex-direction: column; gap: 10px; }
 .sns-item {
@@ -128,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <a href="/" class="nav-logo">Quiet Studio</a>
   <div class="nav-links">
     <a href="#howto"><span class="ja">遊び方</span><span class="en">How to Play</span></a>
+    <a href="#features"><span class="ja">特徴</span><span class="en">Features</span></a>
     <a href="#sns"><span class="ja">公式SNS</span><span class="en">SNS</span></a>
   </div>
 </nav>
@@ -139,16 +171,16 @@ document.addEventListener('DOMContentLoaded', function() {
     <span class="en">Kowakaru</span>
   </h1>
   <p class="hero-sub">
-    <span class="ja">読むとじわっと怖くなる「意味が分かると怖い話」。<br>話の中のおかしな一文や、挿絵の違和感を見つけてタップ。<br>当てると、絵が変わる。</span>
-    <span class="en">Scary stories that creep up on you.<br>Find the odd sentence or the clue hidden in the illustration — tap it.<br>Get it right, and the picture changes.</span>
+    <span class="ja">読むとじわっと怖くなる「意味が分かると怖い話」。<br>話の中のおかしな一文や、挿絵の違和感を見つけてタップ。<br>当てると、絵が変わる。<br>灯りのゆらぎ、雨、霧 — 挿絵が動きます。</span>
+    <span class="en">Scary stories that creep up on you.<br>Find the odd sentence or the clue hidden in the illustration — tap it.<br>Get it right, and the picture changes.<br>Flickering lights, rain, fog — illustrations come alive.</span>
   </p>
   <a href="https://play.google.com/store/apps/details?id=net.quietstudio.kowakaru" class="hero-cta" target="_blank" rel="noopener noreferrer">
     <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.4l2.553 1.478a1 1 0 0 1 0 1.73l-2.553 1.478-2.507-2.507 2.507-2.18zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
     <span>Google Play</span>
   </a>
   <span class="hero-free">
-    <span class="ja">無料 · 全100話 · Android</span>
-    <span class="en">Free · 100 Stories · Android</span>
+    <span class="ja">無料 · 100話収録＋随時追加 · Android</span>
+    <span class="en">Free · 100 stories + new stories delivered · Android</span>
   </span>
 </div>
 
@@ -187,6 +219,55 @@ document.addEventListener('DOMContentLoaded', function() {
     <img src="images/screenshot_03.png" alt="挿絵をタップ">
     <img src="images/screenshot_04.png" alt="正解 — 絵が変わる">
     <img src="images/screenshot_06.png" alt="全100話・5テーマ">
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="features">
+  <div class="section-label">Features</div>
+  <div class="section-title">
+    <span class="ja">特徴</span>
+    <span class="en">Features</span>
+  </div>
+  <div class="version-badge">v1.1.0 — 2026.11.20</div>
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-title"><span class="feature-new">NEW</span><span class="ja">動く挿絵</span><span class="en">Animated Illustrations</span></div>
+      <div class="feature-text">
+        <span class="ja">灯りのゆらぎ、雨、霧 — 挿絵に動きの効果が付きました。話の雰囲気がぐっと深くなります。</span>
+        <span class="en">Flickering lights, rain, fog — illustrations now feature animated effects that deepen the atmosphere of each story.</span>
+      </div>
+      <!-- 動画エフェクト付き挿絵の画像を追加する場所 -->
+      <!--
+      <div class="feature-gallery">
+        <img src="images/effect_01.png" alt="灯りのゆらぎ">
+        <img src="images/effect_02.png" alt="雨の効果">
+        <img src="images/effect_03.png" alt="霧の効果">
+      </div>
+      -->
+    </div>
+    <div class="feature-card">
+      <div class="feature-title"><span class="feature-new">NEW</span><span class="ja">新しい話の追加配信</span><span class="en">New Story Delivery</span></div>
+      <div class="feature-text">
+        <span class="ja">新しい話を「集」としてアプリ内で追加できるようになりました。Wi-Fi 接続時は自動で受け取ります。はじめの100話は通信なしで読めます。</span>
+        <span class="en">New stories are now delivered as collections directly in the app. They're received automatically on Wi-Fi. The first 100 stories are available offline.</span>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-title"><span class="ja">100話収録 · 5テーマ</span><span class="en">100 Stories · 5 Themes</span></div>
+      <div class="feature-text">
+        <span class="ja">日常・学校・家族・仕事・都市伝説。短い話を1〜2分で読んで、おかしな所をタップで指摘。正解すると挿絵が変わり、解説で怖さの正体が分かります。</span>
+        <span class="en">Daily life, school, family, work, urban legends. Read each short story in 1–2 minutes, then tap the oddity. Get it right and the illustration changes — the explanation reveals the true horror.</span>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-title"><span class="ja">無料 · 広告で運営</span><span class="en">Free · Ad-supported</span></div>
+      <div class="feature-text">
+        <span class="ja">すべての話を無料で楽しめます。アプリ内課金はありません。自分で当てたときは広告なしで解説を読めます。</span>
+        <span class="en">All stories are free to play. No in-app purchases. When you solve it yourself, you read the explanation without ads.</span>
+      </div>
+    </div>
   </div>
 </section>
 

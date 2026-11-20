@@ -52,6 +52,24 @@ section { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
 .section-label { font-size: 11px; letter-spacing: 3px; color: #94a3b8; text-transform: uppercase; font-weight: 600; margin-bottom: 6px; }
 .section-title { font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 28px; }
 
+/* NEWS */
+.news-list { display: flex; flex-direction: column; gap: 10px; }
+.news-item {
+  background: white; border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 14px 18px;
+  display: flex; align-items: center; gap: 14px;
+}
+.news-date { flex-shrink: 0; font-size: 11px; color: #94a3b8; font-weight: 600; white-space: nowrap; }
+.news-badge {
+  flex-shrink: 0; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+  background: #c0392b; color: white; text-transform: uppercase; white-space: nowrap;
+}
+.news-badge.update { background: #2563eb; }
+.news-text { font-size: 13px; color: #334155; }
+.news-text a { color: #0f172a; font-weight: 600; text-decoration: none; }
+.news-text a:hover { text-decoration: underline; }
+
 /* APP LIST */
 .app-list { display: flex; flex-direction: column; gap: 10px; }
 .app-item {
@@ -110,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <nav>
   <span class="nav-logo">Quiet Studio</span>
   <div class="nav-links">
+    <a href="#news"><span class="ja">お知らせ</span><span class="en">News</span></a>
     <a href="#apps"><span class="ja">アプリ</span><span class="en">Apps</span></a>
     <a href="#about"><span class="ja">事業概要</span><span class="en">About</span></a>
     <a href="#contact"><span class="ja">連絡先</span><span class="en">Contact</span></a>
@@ -133,6 +152,28 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
 </div>
 
+<section id="news">
+  <div class="section-label">News</div>
+  <div class="section-title">
+    <span class="ja">お知らせ</span>
+    <span class="en">News</span>
+  </div>
+  <div class="news-list">
+    <div class="news-item">
+      <div class="news-date">2026.11.20</div>
+      <div class="news-badge update">Update</div>
+      <div class="news-text"><span class="ja"><a href="/kowakaru/">コワカル v1.1.0</a> — 挿絵に光や雨などの動きが付きました。新しい話の追加配信にも対応。</span><span class="en"><a href="/kowakaru/">Kowakaru v1.1.0</a> — Illustrations now have animated effects (light, rain, fog). New story delivery system added.</span></div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026.11.09</div>
+      <div class="news-badge">Release</div>
+      <div class="news-text"><span class="ja"><a href="/kowakaru/">コワカル</a>をGoogle Playで公開しました。全100話・無料。</span><span class="en"><a href="/kowakaru/">Kowakaru</a> launched on Google Play. 100 stories, free.</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
 <section id="apps">
   <div class="section-label">Available</div>
   <div class="section-title">
@@ -146,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="app-info">
         <div class="app-name"><a href="/kowakaru/" style="color:inherit;text-decoration:none"><span class="ja">コワカル</span><span class="en">Kowakaru</span></a></div>
         <div class="app-cat">Entertainment · <span class="ja">意味が分かると怖い話</span><span class="en">Scary Stories</span></div>
-        <div class="app-desc"><span class="ja">短い怖い話を読んで、おかしな一文や挿絵の違和感をタップで指摘。全100話・無料。</span><span class="en">Read short scary stories and tap to find the odd sentence or the clue in the illustration. 100 stories, free.</span></div>
+        <div class="app-desc"><span class="ja">短い怖い話を読んで、おかしな一文や挿絵の違和感をタップで指摘。全100話収録・新しい話も随時配信。挿絵には光や雨の動きが付いています。無料。</span><span class="en">Read short scary stories and tap to find the odd sentence or the clue in the illustration. 100 stories included, with new stories delivered over time. Illustrations feature animated effects. Free.</span></div>
         <div class="app-desc"><a href="/kowakaru/" style="font-size:12px;color:#0f172a;font-weight:600;text-decoration:none;"><span class="ja">詳しく見る →</span><span class="en">Learn more →</span></a></div>
       </div>
       <div class="app-action"><a href="https://play.google.com/store/apps/details?id=net.quietstudio.kowakaru" target="_blank" rel="noopener noreferrer">Google Play</a></div>
