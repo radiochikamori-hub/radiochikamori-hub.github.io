@@ -13,7 +13,7 @@
 <title>コワカル｜意味が分かると怖い話</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, 'Helvetica Neue', sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.6; }
+body { font-family: -apple-system, 'Helvetica Neue', sans-serif; background: #0e0a0c; color: #e2d8dc; line-height: 1.6; }
 
 body.lang-ja .en { display: none !important; }
 body.lang-en .ja { display: none !important; }
@@ -21,28 +21,46 @@ body.lang-en .ja { display: none !important; }
 /* NAV */
 nav {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(255,255,255,0.92);
+  background: rgba(14,10,12,0.92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 32px; height: 52px;
 }
-.nav-logo { font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #0f172a; text-decoration: none; }
+.nav-logo { font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #e2d8dc; text-decoration: none; }
 .nav-links { display: flex; gap: 28px; }
-.nav-links a { text-decoration: none; font-size: 13px; color: #64748b; font-weight: 500; transition: color 0.15s; }
-.nav-links a:hover { color: #0f172a; }
+.nav-links a { text-decoration: none; font-size: 13px; color: #8a7a80; font-weight: 500; transition: color 0.15s; }
+.nav-links a:hover { color: #e2d8dc; }
 
 /* HERO */
 .hero {
-  text-align: center;
+  position: relative;
+  min-height: 480px;
+  display: flex; align-items: center;
   padding: 56px 24px 48px;
-  background: #1a1014;
-  border-bottom: 1px solid #3a2028;
+  overflow: hidden;
 }
-.hero-icon { width: 88px; height: 88px; border-radius: 20px; margin-bottom: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
-.hero h1 { font-size: clamp(22px, 3.5vw, 30px); font-weight: 800; color: #f1f1f1; letter-spacing: -0.3px; margin-bottom: 6px; line-height: 1.4; }
-.hero-sub { font-size: 14px; color: #b8a0a8; margin-bottom: 28px; line-height: 1.7; }
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('images/keyvisual.jpg');
+  background-size: cover;
+  background-position: 57% center;
+  z-index: 0;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(10,6,8,0.88) 0%, rgba(10,6,8,0.7) 40%, rgba(10,6,8,0.3) 70%, rgba(10,6,8,0.15) 100%);
+}
+.hero-content {
+  position: relative; z-index: 1;
+  max-width: 420px;
+  padding-left: 16px;
+}
+.hero-icon { width: 72px; height: 72px; border-radius: 16px; margin-bottom: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); }
+.hero h1 { font-size: clamp(28px, 4.5vw, 40px); font-weight: 800; color: #ffffff; letter-spacing: -0.3px; margin-bottom: 6px; line-height: 1.3; }
+.hero-sub { font-size: 14px; color: #c8b8c0; margin-bottom: 24px; line-height: 1.8; }
 .hero-cta {
   display: inline-flex; align-items: center; gap: 8px;
   background: #c0392b; color: white;
@@ -54,22 +72,31 @@ nav {
 .hero-cta svg { width: 18px; height: 18px; fill: currentColor; }
 .hero-free { display: block; margin-top: 10px; font-size: 12px; color: #8a7078; }
 
+@media (max-width: 600px) {
+  .hero { min-height: 420px; align-items: flex-end; padding-bottom: 36px; }
+  .hero-bg::after {
+    background: linear-gradient(to top, rgba(10,6,8,0.92) 0%, rgba(10,6,8,0.6) 50%, rgba(10,6,8,0.25) 100%);
+  }
+  .hero-content { max-width: 100%; padding-left: 0; text-align: center; }
+  .hero-icon { margin-left: auto; margin-right: auto; }
+}
+
 /* SECTIONS */
 section { max-width: 640px; margin: 0 auto; padding: 52px 24px; }
-.section-divider { border: none; border-top: 1px solid #e2e8f0; }
-.section-label { font-size: 11px; letter-spacing: 3px; color: #94a3b8; text-transform: uppercase; font-weight: 600; margin-bottom: 6px; }
-.section-title { font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 20px; }
+.section-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); }
+.section-label { font-size: 11px; letter-spacing: 3px; color: #6a5a60; text-transform: uppercase; font-weight: 600; margin-bottom: 6px; }
+.section-title { font-size: 18px; font-weight: 800; color: #e2d8dc; margin-bottom: 20px; }
 
 /* HOW TO PLAY */
 .steps { display: flex; flex-direction: column; gap: 24px; }
 .step { display: flex; gap: 16px; align-items: flex-start; }
 .step-num {
   flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
-  background: #0f172a; color: white;
+  background: #c0392b; color: white;
   font-size: 13px; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
 }
-.step-text { font-size: 14px; color: #334155; padding-top: 3px; }
+.step-text { font-size: 14px; color: #b8a8b0; padding-top: 3px; }
 
 /* SCREENSHOTS */
 .screenshots {
@@ -82,19 +109,19 @@ section { max-width: 640px; margin: 0 auto; padding: 52px 24px; }
 .screenshots::-webkit-scrollbar { display: none; }
 .screenshots img {
   flex-shrink: 0; width: 200px; border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
   scroll-snap-align: start;
 }
 
 /* FEATURES */
 .features { display: flex; flex-direction: column; gap: 16px; }
 .feature-card {
-  background: white; border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  background: #1a1216; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
   padding: 18px 20px;
 }
-.feature-card .feature-title { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
-.feature-card .feature-text { font-size: 13px; color: #64748b; line-height: 1.7; }
+.feature-card .feature-title { font-size: 14px; font-weight: 700; color: #e2d8dc; margin-bottom: 4px; }
+.feature-card .feature-text { font-size: 13px; color: #8a7a80; line-height: 1.7; }
 .feature-new { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 3px; background: #c0392b; color: white; margin-right: 6px; vertical-align: middle; }
 .feature-gallery {
   display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
@@ -111,7 +138,7 @@ section { max-width: 640px; margin: 0 auto; padding: 52px 24px; }
 }
 .feature-gallery img, .feature-gallery video {
   width: 100%; height: auto; border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
   background: #1a1014; aspect-ratio: 4/3; object-fit: cover;
 }
 .feature-gallery .reduced-motion-img { display: none; }
@@ -124,37 +151,44 @@ section { max-width: 640px; margin: 0 auto; padding: 52px 24px; }
 .version-badge {
   display: inline-block; font-size: 11px; font-weight: 600;
   padding: 4px 10px; border-radius: 6px;
-  background: rgba(192, 57, 43, 0.15); color: #c0392b;
+  background: rgba(192, 57, 43, 0.25); color: #e05a4f;
   margin-bottom: 16px;
 }
 
 /* SNS */
 .sns-list { display: flex; flex-direction: column; gap: 10px; }
 .sns-item {
-  background: white; border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  background: #1a1216; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
   padding: 14px 18px;
   display: flex; align-items: center; gap: 14px;
-  text-decoration: none; color: #0f172a;
+  text-decoration: none; color: #e2d8dc;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
-.sns-item:hover { border-color: #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.sns-item:hover { border-color: rgba(255,255,255,0.15); box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
 .sns-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .sns-icon svg { width: 20px; height: 20px; }
-.sns-icon.yt { background: #fee2e2; }
+.sns-icon.yt { background: rgba(255,0,0,0.15); }
 .sns-icon.yt svg { fill: #ff0000; }
-.sns-icon.ig { background: #fce7f3; }
-.sns-icon.ig svg { fill: #E4405F; }
-.sns-icon.tk { background: #f0fdf4; }
-.sns-icon.tk svg { fill: #000000; }
+.sns-icon.tk { background: rgba(255,255,255,0.08); }
+.sns-icon.tk svg { fill: #ffffff; }
 .sns-info { flex: 1; min-width: 0; }
 .sns-name { font-size: 13px; font-weight: 700; }
-.sns-handle { font-size: 11px; color: #94a3b8; }
+.sns-handle { font-size: 11px; color: #6a5a60; }
+
+/* NOTE LINK */
+.note-link {
+  margin-top: 32px; padding: 18px 20px;
+  background: #1a1216; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+}
+.note-link a { text-decoration: none; color: #e2d8dc; display: flex; align-items: center; gap: 12px; }
+.note-link .note-title { font-size: 13px; font-weight: 700; }
+.note-link .note-host { font-size: 11px; color: #6a5a60; }
 
 /* FOOTER */
-footer { text-align: center; padding: 28px 24px; border-top: 1px solid #e2e8f0; font-size: 12px; color: #94a3b8; background: white; }
-footer a { color: #64748b; text-decoration: none; }
-footer a:hover { color: #0f172a; }
+footer { text-align: center; padding: 28px 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; color: #6a5a60; background: #0a0608; }
+footer a { color: #8a7a80; text-decoration: none; }
+footer a:hover { color: #e2d8dc; }
 .footer-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; }
 </style>
 <script>
@@ -189,23 +223,26 @@ document.addEventListener('DOMContentLoaded', function() {
 </nav>
 
 <div class="hero">
-  <img src="/icons/kowakaru.png" alt="コワカル" class="hero-icon">
-  <h1>
-    <span class="ja">コワカル</span>
-    <span class="en">Kowakaru</span>
-  </h1>
-  <p class="hero-sub">
-    <span class="ja">読むとじわっと怖くなる「意味が分かると怖い話」。<br>話の中のおかしな一文や、挿絵の違和感を見つけてタップ。<br>当てると、絵が変わる。<br>灯りのゆらぎ、雨、霧 — 挿絵が動きます。</span>
-    <span class="en">Scary stories that creep up on you.<br>Find the odd sentence or the clue hidden in the illustration — tap it.<br>Get it right, and the picture changes.<br>Flickering lights, rain, fog — illustrations come alive.</span>
-  </p>
-  <a href="https://play.google.com/store/apps/details?id=net.quietstudio.kowakaru" class="hero-cta" target="_blank" rel="noopener noreferrer">
-    <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.4l2.553 1.478a1 1 0 0 1 0 1.73l-2.553 1.478-2.507-2.507 2.507-2.18zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
-    <span>Google Play</span>
-  </a>
-  <span class="hero-free">
-    <span class="ja">無料 · 100話収録＋随時追加 · Android</span>
-    <span class="en">Free · 100 stories + new stories delivered · Android</span>
-  </span>
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <img src="/icons/kowakaru.png" alt="コワカル" class="hero-icon">
+    <h1>
+      <span class="ja">コワカル</span>
+      <span class="en">Kowakaru</span>
+    </h1>
+    <p class="hero-sub">
+      <span class="ja">読むとじわっと怖くなる「意味が分かると怖い話」。<br>話の中のおかしな一文や、挿絵の違和感を見つけてタップ。<br>当てると、絵が変わる。<br>灯りのゆらぎ、雨、霧 — 挿絵が動きます。</span>
+      <span class="en">Scary stories that creep up on you.<br>Find the odd sentence or the clue hidden in the illustration — tap it.<br>Get it right, and the picture changes.<br>Flickering lights, rain, fog — illustrations come alive.</span>
+    </p>
+    <a href="https://play.google.com/store/apps/details?id=net.quietstudio.kowakaru&referrer=utm_source%3Dhomepage%26utm_medium%3Dweb%26utm_campaign%3Drelease110" class="hero-cta" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.4l2.553 1.478a1 1 0 0 1 0 1.73l-2.553 1.478-2.507-2.507 2.507-2.18zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
+      <span>Google Play</span>
+    </a>
+    <span class="hero-free">
+      <span class="ja">無料 · 100話収録＋随時追加 · Android</span>
+      <span class="en">Free · 100 stories + new stories delivered · Android</span>
+    </span>
+  </div>
 </div>
 
 <section id="howto">
@@ -330,12 +367,12 @@ document.addEventListener('DOMContentLoaded', function() {
     </a>
   </div>
 
-  <div style="margin-top: 32px; padding: 18px 20px; background: white; border: 1px solid #e2e8f0; border-radius: 10px;">
-    <a href="https://note.com/quietstudio/n/n8dd534f7e808" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #0f172a; display: flex; align-items: center; gap: 12px;">
+  <div class="note-link">
+    <a href="https://note.com/quietstudio/n/n8dd534f7e808" target="_blank" rel="noopener noreferrer">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><rect width="24" height="24" rx="4" fill="#41C9B4"/><path d="M6 8h8v1.5H6V8zm0 3h12v1.5H6V11zm0 3h10v1.5H6V14z" fill="white"/></svg>
       <div>
-        <div style="font-size: 13px; font-weight: 700;"><span class="ja">開発ストーリーを読む</span><span class="en">Read the Dev Story</span></div>
-        <div style="font-size: 11px; color: #94a3b8;">note.com</div>
+        <div class="note-title"><span class="ja">開発ストーリーを読む</span><span class="en">Read the Dev Story</span></div>
+        <div class="note-host">note.com</div>
       </div>
     </a>
   </div>
@@ -346,9 +383,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <footer>
   <div class="footer-links">
     <a href="/"><span class="ja">Quiet Studio トップ</span><span class="en">Quiet Studio Home</span></a>
-    <span style="color:#e2e8f0">·</span>
+    <span style="color:rgba(255,255,255,0.1)">·</span>
     <a href="/privacy.html#kowakaru"><span class="ja">プライバシーポリシー</span><span class="en">Privacy Policy</span></a>
-    <span style="color:#e2e8f0">·</span>
+    <span style="color:rgba(255,255,255,0.1)">·</span>
     <a href="mailto:info@quietstudio.net"><span class="ja">お問い合わせ</span><span class="en">Contact</span></a>
   </div>
   <p>© 2026 Quiet Studio. All rights reserved.</p>
