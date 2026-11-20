@@ -116,8 +116,8 @@ section { max-width: 640px; margin: 0 auto; padding: 52px 24px; }
 }
 .feature-gallery .reduced-motion-img { display: none; }
 @media (prefers-reduced-motion: reduce) {
-  .feature-gallery video { display: none; }
-  .feature-gallery .reduced-motion-img { display: block; }
+  .feature-gallery video { display: none !important; }
+  .feature-gallery .reduced-motion-img { display: block !important; }
 }
 
 /* VERSION BADGE */
