@@ -83,15 +83,18 @@ nav {
 .hero-icon { width: 72px; height: 72px; border-radius: 16px; margin-bottom: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.5); }
 .hero h1 { font-size: clamp(28px, 4.5vw, 40px); font-weight: 800; color: #ffffff; letter-spacing: -0.3px; margin-bottom: 6px; line-height: 1.3; }
 .hero-sub { font-size: 14px; color: #c8b8c0; margin-bottom: 24px; line-height: 1.8; }
+.hero-cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
 .hero-cta {
   display: inline-flex; align-items: center; gap: 8px;
-  background: #c0392b; color: white;
+  color: white;
   font-size: 14px; font-weight: 700;
-  padding: 12px 28px; border-radius: 8px; text-decoration: none;
+  padding: 12px 24px; border-radius: 8px; text-decoration: none;
   transition: opacity 0.15s;
 }
 .hero-cta:hover { opacity: 0.85; }
 .hero-cta svg { width: 18px; height: 18px; fill: currentColor; }
+.hero-cta.gplay { background: #c0392b; }
+.hero-cta.appstore { background: rgba(255,255,255,0.15); backdrop-filter: blur(4px); }
 .hero-free { display: block; margin-top: 10px; font-size: 12px; color: #8a7078; }
 
 @media (max-width: 600px) {
@@ -101,6 +104,7 @@ nav {
   }
   .hero-content { max-width: 100%; padding-left: 0; text-align: center; }
   .hero-icon { margin-left: auto; margin-right: auto; }
+  .hero-cta-row { justify-content: center; }
 }
 
 /* SECTIONS */
@@ -256,13 +260,19 @@ document.addEventListener('DOMContentLoaded', function() {
       <span class="ja">読むとじわっと怖くなる「意味が分かると怖い話」。<br>話の中のおかしな一文や、挿絵の違和感を見つけてタップ。<br>当てると、絵が変わる。<br>灯りのゆらぎ、雨、霧 — 挿絵が動きます。</span>
       <span class="en">Scary stories that creep up on you.<br>Find the odd sentence or the clue hidden in the illustration — tap it.<br>Get it right, and the picture changes.<br>Flickering lights, rain, fog — illustrations come alive.</span>
     </p>
-    <a href="https://play.google.com/store/apps/details?id=net.quietstudio.kowakaru&referrer=utm_source%3Dhomepage%26utm_medium%3Dweb%26utm_campaign%3Drelease110" class="hero-cta" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.4l2.553 1.478a1 1 0 0 1 0 1.73l-2.553 1.478-2.507-2.507 2.507-2.18zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
-      <span>Google Play</span>
-    </a>
+    <div class="hero-cta-row">
+      <a href="https://play.google.com/store/apps/details?id=net.quietstudio.kowakaru&referrer=utm_source%3Dhomepage%26utm_medium%3Dweb%26utm_campaign%3Drelease110" class="hero-cta gplay" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.4l2.553 1.478a1 1 0 0 1 0 1.73l-2.553 1.478-2.507-2.507 2.507-2.18zM5.864 2.658L16.8 8.99l-2.302 2.302-8.635-8.635z"/></svg>
+        <span>Google Play</span>
+      </a>
+      <a href="https://apps.apple.com/jp/app/id6838242958" class="hero-cta appstore" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span>App Store</span>
+      </a>
+    </div>
     <span class="hero-free">
-      <span class="ja">無料 · 100話収録＋随時追加 · Android</span>
-      <span class="en">Free · 100 stories + new stories delivered · Android</span>
+      <span class="ja">無料 · 100話収録＋随時追加 · Android · iPhone</span>
+      <span class="en">Free · 100 stories + new stories delivered · Android · iPhone</span>
     </span>
   </div>
 </div>

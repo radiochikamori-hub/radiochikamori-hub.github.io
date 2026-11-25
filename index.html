@@ -79,7 +79,7 @@ section { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
   display: flex; align-items: flex-start; gap: 14px;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
-.app-action { padding-top: 2px; }
+.app-action { padding-top: 2px; display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
 .app-item:hover { border-color: #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
 .app-icon { width: 42px; height: 42px; flex-shrink: 0; background: #0f172a; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; overflow: hidden; }
 .app-icon img { width: 100%; height: 100%; object-fit: cover; }
@@ -169,6 +169,11 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="news-badge">Release</div>
       <div class="news-text"><span class="ja"><a href="/kowakaru/">コワカル</a>をGoogle Playで公開しました。全100話・無料。</span><span class="en"><a href="/kowakaru/">Kowakaru</a> launched on Google Play. 100 stories, free.</span></div>
     </div>
+    <div class="news-item">
+      <div class="news-date">2026.11.25</div>
+      <div class="news-badge">Release</div>
+      <div class="news-text"><span class="ja"><a href="/kowakaru/">コワカル</a> iPhone版をApp Storeで公開しました。</span><span class="en"><a href="/kowakaru/">Kowakaru</a> launched on the App Store for iPhone.</span></div>
+    </div>
   </div>
 </section>
 
@@ -190,7 +195,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="app-desc"><span class="ja">短い怖い話を読んで、おかしな一文や挿絵の違和感をタップで指摘。全100話収録・新しい話も随時配信。挿絵には光や雨の動きが付いています。無料。</span><span class="en">Read short scary stories and tap to find the odd sentence or the clue in the illustration. 100 stories included, with new stories delivered over time. Illustrations feature animated effects. Free.</span></div>
         <div class="app-desc"><a href="/kowakaru/" style="font-size:12px;color:#0f172a;font-weight:600;text-decoration:none;"><span class="ja">詳しく見る →</span><span class="en">Learn more →</span></a></div>
       </div>
-      <div class="app-action"><a href="https://play.google.com/store/apps/details?id=net.quietstudio.kowakaru" target="_blank" rel="noopener noreferrer">Google Play</a></div>
+      <div class="app-action">
+        <a href="https://play.google.com/store/apps/details?id=net.quietstudio.kowakaru" target="_blank" rel="noopener noreferrer">Google Play</a>
+        <a href="https://apps.apple.com/jp/app/id6838242958" target="_blank" rel="noopener noreferrer">App Store</a>
+      </div>
     </div>
 
     <div class="app-item">
@@ -243,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="about-item">
       <div class="label"><span class="ja">プラットフォーム</span><span class="en">Platform</span></div>
-      <div class="value"><span class="ja">Android · iOS（準備中）</span><span class="en">Android · iOS (coming soon)</span></div>
+      <div class="value"><span class="ja">Android · iOS</span><span class="en">Android · iOS</span></div>
     </div>
     <div class="about-item">
       <div class="label"><span class="ja">開発技術</span><span class="en">Technology</span></div>
